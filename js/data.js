@@ -12,5 +12,5 @@ window.addEventListener('beforeunload', function () {
 });
 
 if (localStorage.getItem(data)) {
-  data = localStorage.parse(data);
+  data = JSON.parse(localStorage.getItem(data));
 }
