@@ -6,8 +6,11 @@ var data = {
   editing: null,
   nextEntryId: 1
 };
-
 window.addEventListener('beforeunload', function () {
-  this.localStorage.setItem(data);
   JSON.stringify(data);
+  this.localStorage.setItem(data);
 });
+
+if (localStorage.getItem(data)) {
+  data = localStorage.parse(data);
+}

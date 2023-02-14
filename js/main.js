@@ -19,7 +19,7 @@ $form.addEventListener('submit', function (event) {
   inputValues.photo = $urlInput.value;
   inputValues.notes = $notes.value;
 
-  data.entries.unshift(inputValues);
+  data.entries.push(inputValues);
   data.nextEntryId++;
 
   $placeholder.setAttribute('src', 'images/placeholder-image-square.jpg');
