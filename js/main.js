@@ -62,3 +62,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+function toggleNoEntries() {
+  var $noEntries = document.querySelector('.no-entries');
+
+  if (data.entries.length === 0) {
+    $noEntries.classList.remove('hidden');
+  } else {
+    $noEntries.classList.add('hidden');
+  }
+}
+toggleNoEntries();
