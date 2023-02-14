@@ -1,19 +1,18 @@
 var $placeholder = document.querySelector('.placeholder-image');
 var $urlInput = document.querySelector('.photo');
 
-$urlInput.addEventListener('input', function () {
-  $placeholder.setAttribute('src', $urlInput.value);
+$urlInput.addEventListener('input', function (event) {
+  $placeholder.setAttribute('src', event.target.value);
 });
 
 var $form = document.querySelector('.entry-form');
-var inputValues = {};
 
 var $title = document.querySelector('.title');
 var $notes = document.querySelector('.notes');
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
-
+  var inputValues = {};
   inputValues.entryId = data.nextEntryId;
   inputValues.title = $title.value;
   inputValues.photo = $urlInput.value;
