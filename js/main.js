@@ -28,27 +28,27 @@ $form.addEventListener('submit', function (event) {
 
 function renderEntry(entry) {
   var $entry = document.createElement('li');
-  $entry.classList.add('entry');
+  $entry.classList.add('row');
   $entry.setAttribute('data-entry-id', entry.entryId);
 
   var $image = document.createElement('img');
-  $image.classList.add('entry-image');
+  $image.className = 'entry-image column-half';
   $image.setAttribute('src', entry.photo);
   $entry.appendChild($image);
 
-  var $entryContent = document.createElement('div');
-  $entryContent.classList.add('entry-content');
-  $entry.appendChild($entryContent);
+  var $entryText = document.createElement('div');
+  $entryText.classList.add('entry-text', 'column-half');
+  $entry.appendChild($entryText);
 
   var $title = document.createElement('h3');
   $title.classList.add('entry-title');
   $title.textContent = entry.title;
-  $entryContent.appendChild($title);
+  $entryText.appendChild($title);
 
   var $notes = document.createElement('p');
   $notes.classList.add('entry-notes');
   $notes.textContent = entry.notes;
-  $entryContent.appendChild($notes);
+  $entryText.appendChild($notes);
 
   return $entry;
 

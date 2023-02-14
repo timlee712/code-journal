@@ -113,7 +113,35 @@ p {
 }
 
 .entries {
-  margin-left: -1rem;
+  margin-left: -2rem;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+#view-entries {
+  color: white;
+  background-color: #552b80;
+  font-size: 1.4rem;
+  display: inline;
+  padding-left: 4%;
+}
+
+#show-form {
+  color: white;
+  background-color: #552b80;
+  border: solid #552b80;
+  font-size: 1.5rem;
+  margin-left: 48%;
+  padding: 1%;
+  border-radius: 5%;
+}
+
+img {
+  width: 100%;
+  margin-left: 5%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -178,6 +206,7 @@ p {
   .entry-image {
     width: 50%;
     padding-bottom: 4rem;
+    margin-right: 1.5rem;
   }
 
   .entry-title,
@@ -191,5 +220,9 @@ p {
 
   .entry-title {
     margin-left: 0;
+  }
+
+  #show-form {
+    margin-left: 80%;
   }
 }
