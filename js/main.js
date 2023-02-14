@@ -27,32 +27,30 @@ $form.addEventListener('submit', function (event) {
 });
 
 function renderEntry(entry) {
-  var listItem = document.createElement('li');
-  var entryDiv = document.createElement('div');
-  var entryImageDiv = document.createElement('div');
-  var entryImage = document.createElement('img');
-  var entryTextDiv = document.createElement('div');
-  var entryTitle = document.createElement('h3');
-  var entryNotes = document.createElement('p');
+  var $entry = document.createElement('li');
+  $entry.classList.add('entry');
+  $entry.setAttribute('data-entry-id', entry.entryId);
 
-  listItem.appendChild(entryDiv);
-  entryDiv.appendChild(entryImageDiv);
-  entryImageDiv.appendChild(entryImage);
-  entryDiv.appendChild(entryTextDiv);
-  entryTextDiv.appendChild(entryTitle);
-  entryTextDiv.appendChild(entryNotes);
+  var $image = document.createElement('img');
+  $image.classList.add('entry-image');
+  $image.setAttribute('src', entry.photo);
+  $entry.appendChild($image);
 
-  listItem.className = 'entry row';
-  entryImageDiv.className = 'entry-image column-half';
-  entryTextDiv.className = 'entry-text column-half';
-  entryTitle.className = 'entry-title';
-  entryNotes.className = 'entry-notes';
+  var $entryContent = document.createElement('div');
+  $entryContent.classList.add('entry-content');
+  $entry.appendChild($entryContent);
 
-  entryImage.src = entry.photoURL;
-  entryImage.alt = 'entry image';
-  entryTitle.textContent = entry.title;
-  entryNotes.textContent = entry.notes;
+  var $title = document.createElement('h3');
+  $title.classList.add('entry-title');
+  $title.textContent = entry.title;
+  $entryContent.appendChild($title);
 
-  return listItem;
+  var $notes = document.createElement('p');
+  $notes.classList.add('entry-notes');
+  $notes.textContent = entry.notes;
+  $entryContent.appendChild($notes);
+
+  return $entry;
+
 }
 renderEntry();
