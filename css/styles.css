@@ -14,15 +14,16 @@ header {
   background-color: #552b80;
   padding: 1rem 0;
   color: #f0f0f0;
-  margin: 0;
+  margin: 0 -0.1rem;
   font-size: 1.8rem;
   font-weight: 300;
   width: 110%;
 }
 
-.new-entry {
+.new-entry,
+.entries {
   font-size: 2.8rem;
-  margin: 1.3rem 0.5rem;
+  margin: 1.3rem 0;
   font-weight: 500;
 }
 
@@ -76,6 +77,45 @@ label {
   text-align: right;
 }
 
+ul {
+  width: 105%;
+  margin-left: -0.9rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+.entry-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.entry-image,
+.entry-text {
+  margin: 0 0 0 -1rem;
+}
+
+.entry-title {
+  font-size: 1.6rem;
+  margin-left: -0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+p {
+  margin-top: 0;
+  font-size: 1.05rem;
+  line-height: 1.4rem;
+  word-spacing: 2px;
+  padding-bottom: 1rem;
+  text-align: left;
+}
+
+.entries {
+  margin-left: -1rem;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     width: 100%;
@@ -89,10 +129,6 @@ label {
   .header-title {
     margin: 0 -7%;
     padding: 1rem 0;
-  }
-
-  .column-half {
-    width: 50%;
   }
 
   .input.column-half {
@@ -126,5 +162,34 @@ label {
 
   label {
     margin: 1rem 0 0;
+  }
+
+  ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .row-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .entry-image {
+    width: 50%;
+    padding-bottom: 4rem;
+  }
+
+  .entry-title,
+  .entry-text {
+    width: 50%;
+  }
+
+  .entry-text {
+    justify-content: start;
+  }
+
+  .entry-title {
+    margin-left: 0;
   }
 }
