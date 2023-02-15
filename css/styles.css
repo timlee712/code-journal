@@ -101,6 +101,7 @@ li {
   margin-left: -0.5rem;
   margin-bottom: 0.5rem;
   text-align: left;
+  width: 100%;
 }
 
 p {
@@ -149,6 +150,14 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fa-solid,
+.fa-sharp,
+.fa-pen {
+  color: #552b80;
+  position: absolute;
+  right: 10%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -227,9 +236,16 @@ img {
 
   .entry-title {
     margin-left: 0;
+    width: 100%;
   }
 
   #show-form {
     margin-left: 80%;
+  }
+
+  .fa-solid,
+  .fa-pen,
+  .fa-sharp {
+    right: 20%;
   }
 }

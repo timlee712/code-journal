@@ -54,6 +54,10 @@ function renderEntry(entry) {
   $title.textContent = entry.title;
   $entryText.appendChild($title);
 
+  var $pencil = document.createElement('span');
+  $pencil.classList.add('fa-solid', 'fa-sharp', 'fa-pen');
+  $title.appendChild($pencil);
+
   var $notes = document.createElement('p');
   $notes.classList.add('entry-notes');
   $notes.textContent = entry.notes;
