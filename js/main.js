@@ -12,6 +12,7 @@ var $notes = document.querySelector('.notes');
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
+
   var inputValues = {};
   inputValues.entryId = data.nextEntryId;
   inputValues.title = $title.value;
@@ -76,6 +77,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   viewSwap(data.view);
   toggleNoEntries(data.entries.length);
+
+  $entryList.addEventListener('click', function (event) {
+    if (event.target.matches('.fa-pen')) {
+      viewSwap('entry-form');
+      var entryId = parseInt(event.target.closest('li').getAttribute('data-entry-id'));
+      data.editing = data.entries.find(function (entry) {
+        return entry.entryId === entryId;
+      });
+      $title.value = data.editing.title;
+      $urlInput.value = data.editing.photo;
+      $placeholder.setAttribute('src', data.editing.photo);
+      $notes.value = data.editing.notes;
+
+      document.querySelector('.new-entry').textContent = 'Edit Entry';
+    }
+  });
 });
 
 function toggleNoEntries() {
