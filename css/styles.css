@@ -71,6 +71,7 @@ label {
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .button {
@@ -98,7 +99,7 @@ li {
 
 .entry-title {
   font-size: 1.6rem;
-  margin-left: -0.5rem;
+  margin-left: -0.1rem;
   margin-bottom: 0.5rem;
   text-align: left;
   width: 100%;
@@ -108,13 +109,13 @@ p {
   margin-top: 0;
   font-size: 1.05rem;
   line-height: 1.4rem;
-  word-spacing: 2px;
+  word-spacing: 1px;
   padding-bottom: 1rem;
   text-align: left;
 }
 
 .entries {
-  margin-left: -0.5rem;
+  margin-left: 0.4rem;
   padding-bottom: 1rem;
 }
 
@@ -159,6 +160,10 @@ img {
   right: 10%;
 }
 
+i:hover {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     width: 100%;
@@ -166,7 +171,11 @@ img {
 
   header {
     width: 100%;
-    padding: 0 25.8%;
+    padding-left: 29%;
+  }
+
+  p {
+    margin-left: 0.1rem;
   }
 
   .header-title {
@@ -192,6 +201,7 @@ img {
 
   .placeholder-image {
     width: 100%;
+    height: auto;
   }
 
   .row {
@@ -236,6 +246,11 @@ img {
   .entry-title {
     margin-left: 0;
     width: 100%;
+  }
+
+  .entries,
+  .new-entry {
+    margin-left: 1.1rem;
   }
 
   #show-form {
