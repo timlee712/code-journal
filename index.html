@@ -21,37 +21,43 @@
 <body>
   <header>
 
-    <h2 class="header-title">Code Journal</h2>
-
+    <h2 class="header-title">Code Journal<a href="#" id="view-entries">Entries</a></h2>
   </header>
   <main class="container">
-    <div data-view="entry-form">
-      <h1 class="new-entry">New Entry</h1>
+    <form class="entry-form">
+      <div data-view="entry-form" class="">
+        <h1 class="new-entry">New Entry</h1>
+      </div>
+      <div class="row">
+        <div class="img column-half">
+          <img src="images/placeholder-image-square.jpg" alt="placeholder-image" class="placeholder-image">
+        </div>
+        <div class="input column-half">
+          <label>Title</label>
+          <input type="text" class="title" required>
+          <label>Photo URL</label>
+          <input type="url" class="photo" required>
+        </div>
+      </div>
+      <div id="input-notes" class="column-full">
+        <label class="notes-label">Notes</label>
+        <textarea class="notes" required></textarea>
+      </div>
+      <div class="button">
+        <button type="submit" class="save-button">SAVE</button>
+      </div>
+    </form>
 
-      <form class="entry-form">
-        <div class="row">
-          <div class="img column-half">
-            <img src="images/placeholder-image-square.jpg" alt="placeholder-image" class="placeholder-image">
+    <div data-view="entries" class="entry-list hidden">
+      <h1 class="entries">Entries<a href="#" id="show-form" class="button">NEW</a></h1>
+      <ul class="entries-list">
+        <li>
+          <div class="no-entries">No entries has been recorded.
           </div>
-          <div class="input column-half">
-            <label>Title</label>
-            <input type="text" class="title" required>
-            <label>Photo URL</label>
-            <input type="url" class="photo" required>
-          </div>
-        </div>
-
-        <div id="input-notes" class="column-full">
-          <label class="notes-label">Notes</label>
-          <textarea class="notes" required></textarea>
-        </div>
-        <div class="button">
-          <button type="submit" class="save-button">SAVE</button>
-        </div>
-
-      </form>
+        </li>
+      </ul>
     </div>
-    <div data-view="entries" class="hidden"></div>
+
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
