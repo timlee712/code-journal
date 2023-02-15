@@ -95,7 +95,7 @@ function viewSwap(viewName) {
   } else if (viewName === 'entry-form') {
     $entryList.classList.add('hidden');
     $entryForm.classList.remove('hidden');
-    data.view = 'entries';
+    data.view = 'entry-form';
   }
   toggleNoEntries();
 }
