@@ -14,7 +14,7 @@ header {
   background-color: #552b80;
   padding: 1rem 0;
   color: #f0f0f0;
-  margin: 0 -0.1rem;
+  margin: 0 -0.2rem;
   font-size: 1.8rem;
   font-weight: 300;
   width: 110%;
@@ -113,7 +113,8 @@ p {
 }
 
 .entries {
-  margin-left: -2rem;
+  margin-left: -0.5rem;
+  padding-bottom: 1rem;
 }
 
 a,
@@ -144,6 +145,12 @@ img {
   margin-left: 5%;
 }
 
+.no-entries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     width: 100%;
@@ -155,7 +162,7 @@ img {
   }
 
   .header-title {
-    margin: 0 -7%;
+    margin: 0 -9%;
     padding: 1rem 0;
   }
 

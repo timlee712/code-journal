@@ -18,8 +18,17 @@ $form.addEventListener('submit', function (event) {
   inputValues.photo = $urlInput.value;
   inputValues.notes = $notes.value;
 
-  data.entries.push(inputValues);
+  data.entries.unshift(inputValues);
   data.nextEntryId++;
+
+  var $entryList = document.querySelector('.entries-list');
+
+  var $newEntryDOM = renderEntry(inputValues);
+  $entryList.prepend($newEntryDOM);
+
+  viewSwap('entries');
+
+  toggleNoEntries();
 
   $placeholder.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
@@ -55,13 +64,14 @@ function renderEntry(entry) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-
-  var $entryList = document.querySelector('.entry-list');
+  var $entryList = document.querySelector('.entries-list');
   data.entries.forEach(function (entry) {
     var $entry = renderEntry(entry);
     $entryList.appendChild($entry);
   });
 
+  viewSwap(data.view);
+  toggleNoEntries(data.entries.length);
 });
 
 function toggleNoEntries() {
