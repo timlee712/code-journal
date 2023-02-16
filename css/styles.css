@@ -164,6 +164,32 @@ i:hover {
   cursor: pointer;
 }
 
+.delete-save-button {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
+.delete-button {
+  color: red;
+  text-decoration: underline;
+  font-size: 1rem;
+  border: none;
+}
+
+.button > .row > .column-half {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.button > .row > .column-half:nth-child(2) {
+  justify-content: flex-end;
+}
+
+.button > .row > .column-half:nth-child(1) {
+  justify-content: flex-start;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     width: 100%;
@@ -261,5 +287,9 @@ i:hover {
   .fa-pen,
   .fa-sharp {
     right: 20%;
+  }
+
+  .save-button {
+    margin-left: 22%;
   }
 }

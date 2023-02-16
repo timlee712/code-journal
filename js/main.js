@@ -53,6 +53,8 @@ $form.addEventListener('submit', function (event) {
 
   toggleNoEntries();
 
+  var $deleteButton = document.querySelector('.delete-button');
+  $deleteButton.classList.add('hidden');
   document.querySelector('.new-entry').textContent = 'New Entry';
   $placeholder.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
@@ -151,13 +153,15 @@ $ul.addEventListener('click', function (event) {
     data.editing = data.entries.find(function (entry) {
       return entry.entryId === entryId;
     });
+
     $title.value = data.editing.title;
     $urlInput.value = data.editing.photo;
     $placeholder.setAttribute('src', data.editing.photo);
     $notes.value = data.editing.notes;
 
     document.querySelector('.new-entry').textContent = 'Edit Entry';
-
+    var $deleteButton = document.querySelector('.delete-button');
+    $deleteButton.classList.remove('hidden');
   }
 
 });
