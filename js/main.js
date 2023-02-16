@@ -43,6 +43,8 @@ $form.addEventListener('submit', function (event) {
     $entryText.querySelector('.entry-title').textContent = data.editing.title;
     $entryText.querySelector('.entry-notes').textContent = data.editing.notes;
 
+    $editedEntry.replaceWith(renderEntry(data.editing));
+
     data.editing = null;
 
     viewSwap('entries');
@@ -72,7 +74,7 @@ function renderEntry(entry) {
   $entry.appendChild($entryText);
 
   var $title = document.createElement('h3');
-  $title.classList.add('entry-title');
+  $title.classList.add('entry-title', 'title');
   $title.textContent = entry.title;
   $entryText.appendChild($title);
 
