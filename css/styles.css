@@ -190,6 +190,50 @@ i:hover {
   justify-content: flex-start;
 }
 
+.modal-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  border-radius: 4%;
+  width: 80%;
+  height: 20%;
+  position: fixed;
+  inset: 35% auto auto 9.8%;
+  box-shadow: 2rem 25rem 25rem 50rem rgb(0 0 0 / 50%);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+#cancel-button,
+#delete-confirm-button {
+  justify-content: space-between;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+#cancel-button {
+  background-color: #b6b6b6;
+  color: black;
+}
+
+#delete-confirm-button {
+  background-color: #dc2626;
+  color: white;
+}
+
+.modal-content > p {
+  padding-bottom: 2.5rem;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     width: 100%;
@@ -291,5 +335,24 @@ i:hover {
 
   .save-button {
     margin-left: 22%;
+  }
+
+  .modal {
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 4%;
+    width: 25%;
+    height: 20%;
+    position: fixed;
+    inset: 35% auto auto 38%;
+    box-shadow: 2rem 25rem 25rem 50rem rgb(0 0 0 / 50%);
   }
 }

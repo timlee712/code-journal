@@ -61,6 +61,13 @@ $form.addEventListener('submit', function (event) {
 
 });
 
+var $newButton = document.querySelector('#show-form');
+$newButton.addEventListener('click', function (event) {
+  document.querySelector('.new-entry').textContent = 'New Entry';
+  $placeholder.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $form.reset();
+});
+
 function renderEntry(entry) {
   var $entry = document.createElement('li');
   $entry.classList.add('row');
@@ -162,6 +169,21 @@ $ul.addEventListener('click', function (event) {
     document.querySelector('.new-entry').textContent = 'Edit Entry';
     var $deleteButton = document.querySelector('.delete-button');
     $deleteButton.classList.remove('hidden');
+
   }
+
+});
+
+var $deleteButton = document.querySelector('.delete-button');
+$deleteButton.addEventListener('click', function (event) {
+  var modal = document.querySelector('.modal');
+  var cancelButton = document.querySelector('#cancel-button');
+
+  modal.classList.remove('hidden');
+
+  cancelButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    modal.classList.add('hidden');
+  });
 
 });
