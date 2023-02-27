@@ -44,7 +44,28 @@
         <textarea class="notes" required></textarea>
       </div>
       <div class="button">
-        <button type="submit" class="save-button">SAVE</button>
+        <div class="row">
+          <div class="column-half">
+            <button type="button" class="hidden delete-button">Delete Entry</button>
+          </div>
+          <div class="column-half">
+            <button type="submit" class="save-button">SAVE</button>
+          </div>
+        </div>
+      </div>
+      <div class="hidden modal">
+        <div class="modal-content">
+          <p>Are you sure you want to delete this entry?</p>
+          <div class="modal-buttons">
+            <div class="column-half">
+              <button id="cancel-button">Cancel</button>
+            </div>
+            <div class="column-half">
+              <button id="confirm-button">Confirm</button>
+            </div>
+
+          </div>
+        </div>
       </div>
     </form>
 

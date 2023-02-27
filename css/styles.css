@@ -164,6 +164,84 @@ i:hover {
   cursor: pointer;
 }
 
+.delete-save-button {
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
+.delete-button {
+  color: red;
+  text-decoration: underline;
+  font-size: 1rem;
+  border: none;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.button > .row > .column-half {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.button > .row > .column-half:nth-child(2) {
+  justify-content: flex-end;
+}
+
+.button > .row > .column-half:nth-child(1) {
+  justify-content: flex-start;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  border-radius: 4%;
+  width: 80%;
+  height: 20%;
+  position: fixed;
+  inset: 35% auto auto 9.8%;
+  box-shadow: 2rem 25rem 25rem 50rem rgb(0 0 0 / 50%);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#cancel-button,
+#confirm-button {
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+#cancel-button {
+  background-color: #b6b6b6;
+  color: black;
+  margin-right: 3rem;
+  margin-left: 1.5rem;
+  width: 50%;
+}
+
+#confirm-button {
+  background-color: #dc2626;
+  color: white;
+  margin-left: 4.5rem;
+  width: 50%;
+}
+
+.modal-content > p {
+  padding-bottom: 2.5rem;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     width: 100%;
@@ -261,5 +339,37 @@ i:hover {
   .fa-pen,
   .fa-sharp {
     right: 20%;
+  }
+
+  .save-button {
+    margin-left: 22%;
+  }
+
+  .modal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .modal-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 4%;
+    width: 25%;
+    height: 20%;
+    position: fixed;
+    inset: 35% auto auto 38%;
+    box-shadow: 2rem 25rem 25rem 50rem rgb(0 0 0 / 50%);
+  }
+
+  #cancel-button {
+    margin-left: 1rem;
+  }
+
+  #view-entries {
+    padding-left: 2.5%;
   }
 }

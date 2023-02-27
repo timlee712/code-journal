@@ -53,15 +53,24 @@ $form.addEventListener('submit', function (event) {
 
   toggleNoEntries();
 
+  var $deleteButton = document.querySelector('.delete-button');
+  $deleteButton.classList.add('hidden');
   document.querySelector('.new-entry').textContent = 'New Entry';
   $placeholder.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 
 });
 
+var $newButton = document.querySelector('#show-form');
+$newButton.addEventListener('click', function (event) {
+  document.querySelector('.new-entry').textContent = 'New Entry';
+  $placeholder.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $form.reset();
+});
+
 function renderEntry(entry) {
   var $entry = document.createElement('li');
-  $entry.classList.add('row');
+  $entry.classList.add('row', 'entry');
   $entry.setAttribute('data-entry-id', entry.entryId);
 
   var $image = document.createElement('img');
@@ -151,13 +160,52 @@ $ul.addEventListener('click', function (event) {
     data.editing = data.entries.find(function (entry) {
       return entry.entryId === entryId;
     });
+
     $title.value = data.editing.title;
     $urlInput.value = data.editing.photo;
     $placeholder.setAttribute('src', data.editing.photo);
     $notes.value = data.editing.notes;
 
     document.querySelector('.new-entry').textContent = 'Edit Entry';
+    var $deleteButton = document.querySelector('.delete-button');
+    $deleteButton.classList.remove('hidden');
+    var modal = document.querySelector('.modal');
+    modal.classList.add('hidden');
 
   }
 
+});
+
+var $deleteButton = document.querySelector('.delete-button');
+$deleteButton.addEventListener('click', function (event) {
+  var modal = document.querySelector('.modal');
+  var cancelButton = document.querySelector('#cancel-button');
+
+  modal.classList.remove('hidden');
+
+  cancelButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    modal.classList.add('hidden');
+  });
+
+  var confirmButton = document.querySelector('#confirm-button');
+  confirmButton.addEventListener('click', function (event) {
+    var selectedEntryId = data.editing.entryId;
+    var selectedEntryIndex = data.entries.findIndex(function (entry) {
+      return entry.entryId === selectedEntryId;
+    }
+    );
+
+    data.entries.splice(selectedEntryIndex, 1);
+
+    var entryElement = document.querySelector('li[data-entry-id="' + selectedEntryId + '"]');
+    entryElement.remove();
+
+    if (data.editing === data.entries[0]) {
+      toggleNoEntries();
+    }
+
+    viewSwap('entries');
+
+  });
 });
