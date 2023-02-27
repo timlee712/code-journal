@@ -176,6 +176,10 @@ i:hover {
   border: none;
 }
 
+.delete-button:hover {
+  cursor: pointer;
+}
+
 .button > .row > .column-half {
   flex-direction: row;
   justify-content: space-between;
@@ -207,12 +211,11 @@ i:hover {
 .modal-buttons {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
 }
 
 #cancel-button,
-#delete-confirm-button {
-  justify-content: space-between;
+#confirm-button {
   border: none;
   border-radius: 5%;
   cursor: pointer;
@@ -223,11 +226,16 @@ i:hover {
 #cancel-button {
   background-color: #b6b6b6;
   color: black;
+  margin-right: 3rem;
+  margin-left: 1.5rem;
+  width: 50%;
 }
 
-#delete-confirm-button {
+#confirm-button {
   background-color: #dc2626;
   color: white;
+  margin-left: 4.5rem;
+  width: 50%;
 }
 
 .modal-content > p {
@@ -340,6 +348,7 @@ i:hover {
   .modal {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 
   .modal-content {
@@ -354,5 +363,13 @@ i:hover {
     position: fixed;
     inset: 35% auto auto 38%;
     box-shadow: 2rem 25rem 25rem 50rem rgb(0 0 0 / 50%);
+  }
+
+  #cancel-button {
+    margin-left: 1rem;
+  }
+
+  #view-entries {
+    padding-left: 2.5%;
   }
 }

@@ -70,7 +70,7 @@ $newButton.addEventListener('click', function (event) {
 
 function renderEntry(entry) {
   var $entry = document.createElement('li');
-  $entry.classList.add('row');
+  $entry.classList.add('row', 'entry');
   $entry.setAttribute('data-entry-id', entry.entryId);
 
   var $image = document.createElement('img');
@@ -169,6 +169,8 @@ $ul.addEventListener('click', function (event) {
     document.querySelector('.new-entry').textContent = 'Edit Entry';
     var $deleteButton = document.querySelector('.delete-button');
     $deleteButton.classList.remove('hidden');
+    var modal = document.querySelector('.modal');
+    modal.classList.add('hidden');
 
   }
 
@@ -186,4 +188,24 @@ $deleteButton.addEventListener('click', function (event) {
     modal.classList.add('hidden');
   });
 
+  var confirmButton = document.querySelector('#confirm-button');
+  confirmButton.addEventListener('click', function (event) {
+    var selectedEntryId = data.editing.entryId;
+    var selectedEntryIndex = data.entries.findIndex(function (entry) {
+      return entry.entryId === selectedEntryId;
+    }
+    );
+
+    data.entries.splice(selectedEntryIndex, 1);
+
+    var entryElement = document.querySelector('li[data-entry-id="' + selectedEntryId + '"]');
+    entryElement.remove();
+
+    if (data.editing === data.entries[0]) {
+      toggleNoEntries();
+    }
+
+    viewSwap('entries');
+
+  });
 });
